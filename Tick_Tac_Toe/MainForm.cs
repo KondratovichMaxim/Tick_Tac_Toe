@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace Tick_Tac_Toe
         String player;
         String mode;
         int steps;
+        bool history;
         public MainForm()
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace Tick_Tac_Toe
 
             List<Button> list = new List<Button>();
             list.AddRange(this.Controls.OfType<Button>().ToList<Button>());
+            list.RemoveAt(0);
             list.Reverse();
 
             for (int i = 0, z = 0; i < 3; i++)
@@ -31,8 +34,11 @@ namespace Tick_Tac_Toe
                 for (int j = 0; j < 3; j++)
                 {
                     field[i, j] = list[z++];
+                    
                 }
             }
+
+            history = false;
 
             Restart();
         }
@@ -52,6 +58,13 @@ namespace Tick_Tac_Toe
             steps = 0;
             lblSteps.Text = "Steps: " + steps;
 
+            ReloadListBox();
+
+        }
+        void ReloadListBox()
+        {
+            listBox1.Items.Clear();
+            listBox1.Items.AddRange(File.ReadAllLines("History.txt"));
         }
 
         private void Button_Clicked(object sender, MouseEventArgs e)
@@ -275,8 +288,7 @@ namespace Tick_Tac_Toe
             #region Random Attack
 
             Random r = new Random();
-            int x = r.Next(4);
-            int y = r.Next(4);
+            int x, y;
 
             do
             {
@@ -332,6 +344,12 @@ namespace Tick_Tac_Toe
         {
             MessageBox.Show(player + " wins");
 
+            using (System.IO.StreamWriter file =
+            new System.IO.StreamWriter("History.txt", true))
+            {
+                file.WriteLine(DateTime.Now.ToString() + " " + player + " wins in " + steps + " steps");
+            }
+
             Restart();
         }
 
@@ -356,6 +374,30 @@ namespace Tick_Tac_Toe
             Restart();
         }
 
+        private void bttnOpenHistory_Click(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            
+            if (!history)
+            {
+                this.Size = new Size(520, 307);
 
+                listBox1.Visible = true;
+
+                b.Location = new Point(467, 144);
+                b.Text = "<";
+                history = true;
+            }
+            else
+            {
+                this.Size = new Size(293,307);
+
+                listBox1.Visible = false;
+
+                b.Location = new Point(240,144);
+                b.Text = ">";
+                history = false;
+            }
+        }
     }
 }
