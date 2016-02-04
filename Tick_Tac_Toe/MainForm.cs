@@ -399,5 +399,16 @@ namespace Tick_Tac_Toe
                 history = false;
             }
         }
+
+        private void showhideHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bttnOpenHistory.PerformClick();
+        }
+
+        private void clearHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            File.Create("History.txt").Close();
+            ReloadListBox();
+        }
     }
 }

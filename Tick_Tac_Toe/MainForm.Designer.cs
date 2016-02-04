@@ -46,13 +46,17 @@
             this.lblSteps = new System.Windows.Forms.Label();
             this.bttnOpenHistory = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showhideHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gameToolStripMenuItem});
+            this.gameToolStripMenuItem,
+            this.historyToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(277, 24);
@@ -235,6 +239,29 @@
             this.listBox1.TabIndex = 12;
             this.listBox1.Visible = false;
             // 
+            // historyToolStripMenuItem
+            // 
+            this.historyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showhideHistoryToolStripMenuItem,
+            this.clearHistoryToolStripMenuItem});
+            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.historyToolStripMenuItem.Text = "History";
+            // 
+            // showhideHistoryToolStripMenuItem
+            // 
+            this.showhideHistoryToolStripMenuItem.Name = "showhideHistoryToolStripMenuItem";
+            this.showhideHistoryToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.showhideHistoryToolStripMenuItem.Text = "Show/hide history";
+            this.showhideHistoryToolStripMenuItem.Click += new System.EventHandler(this.showhideHistoryToolStripMenuItem_Click);
+            // 
+            // clearHistoryToolStripMenuItem
+            // 
+            this.clearHistoryToolStripMenuItem.Name = "clearHistoryToolStripMenuItem";
+            this.clearHistoryToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.clearHistoryToolStripMenuItem.Text = "Clear history";
+            this.clearHistoryToolStripMenuItem.Click += new System.EventHandler(this.clearHistoryToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,6 +310,9 @@
         private System.Windows.Forms.Label lblSteps;
         private System.Windows.Forms.Button bttnOpenHistory;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showhideHistoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clearHistoryToolStripMenuItem;
     }
 }
 
