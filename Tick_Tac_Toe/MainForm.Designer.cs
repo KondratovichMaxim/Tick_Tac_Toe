@@ -34,6 +34,9 @@
             this.gameModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.singlevsBotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.multiplayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showhideHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -46,9 +49,11 @@
             this.lblSteps = new System.Windows.Forms.Label();
             this.bttnOpenHistory = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showhideHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clearHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonStyleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.standartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.flatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.popupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +61,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gameToolStripMenuItem,
-            this.historyToolStripMenuItem});
+            this.historyToolStripMenuItem,
+            this.buttonStyleToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(277, 24);
@@ -75,7 +81,7 @@
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newGameToolStripMenuItem.Text = "New game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
             // 
@@ -85,23 +91,46 @@
             this.singlevsBotToolStripMenuItem,
             this.multiplayerToolStripMenuItem});
             this.gameModeToolStripMenuItem.Name = "gameModeToolStripMenuItem";
-            this.gameModeToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.gameModeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.gameModeToolStripMenuItem.Text = "Game mode";
             // 
             // singlevsBotToolStripMenuItem
             // 
-            this.singlevsBotToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.singlevsBotToolStripMenuItem.BackColor = System.Drawing.Color.Silver;
             this.singlevsBotToolStripMenuItem.Name = "singlevsBotToolStripMenuItem";
-            this.singlevsBotToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.singlevsBotToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.singlevsBotToolStripMenuItem.Text = "Single(vs bot)";
             this.singlevsBotToolStripMenuItem.Click += new System.EventHandler(this.Mode_Changed);
             // 
             // multiplayerToolStripMenuItem
             // 
             this.multiplayerToolStripMenuItem.Name = "multiplayerToolStripMenuItem";
-            this.multiplayerToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.multiplayerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.multiplayerToolStripMenuItem.Text = "Multiplayer";
             this.multiplayerToolStripMenuItem.Click += new System.EventHandler(this.Mode_Changed);
+            // 
+            // historyToolStripMenuItem
+            // 
+            this.historyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showhideHistoryToolStripMenuItem,
+            this.clearHistoryToolStripMenuItem});
+            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.historyToolStripMenuItem.Text = "History";
+            // 
+            // showhideHistoryToolStripMenuItem
+            // 
+            this.showhideHistoryToolStripMenuItem.Name = "showhideHistoryToolStripMenuItem";
+            this.showhideHistoryToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.showhideHistoryToolStripMenuItem.Text = "Show/hide history";
+            this.showhideHistoryToolStripMenuItem.Click += new System.EventHandler(this.showhideHistoryToolStripMenuItem_Click);
+            // 
+            // clearHistoryToolStripMenuItem
+            // 
+            this.clearHistoryToolStripMenuItem.Name = "clearHistoryToolStripMenuItem";
+            this.clearHistoryToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.clearHistoryToolStripMenuItem.Text = "Clear history";
+            this.clearHistoryToolStripMenuItem.Click += new System.EventHandler(this.clearHistoryToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -113,6 +142,7 @@
             this.button1.Tag = "field";
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.TextChanged += new System.EventHandler(this.button9_TextChanged);
             this.button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Button_Clicked);
             // 
             // button2
@@ -125,6 +155,7 @@
             this.button2.Tag = "field";
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.TextChanged += new System.EventHandler(this.button9_TextChanged);
             this.button2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Button_Clicked);
             // 
             // button3
@@ -137,6 +168,7 @@
             this.button3.Tag = "field";
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.TextChanged += new System.EventHandler(this.button9_TextChanged);
             this.button3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Button_Clicked);
             // 
             // button4
@@ -149,6 +181,7 @@
             this.button4.Tag = "field";
             this.button4.Text = "2";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.TextChanged += new System.EventHandler(this.button9_TextChanged);
             this.button4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Button_Clicked);
             // 
             // button5
@@ -161,6 +194,7 @@
             this.button5.Tag = "field";
             this.button5.Text = "3";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.TextChanged += new System.EventHandler(this.button9_TextChanged);
             this.button5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Button_Clicked);
             // 
             // button6
@@ -173,6 +207,7 @@
             this.button6.Tag = "field";
             this.button6.Text = "4";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.TextChanged += new System.EventHandler(this.button9_TextChanged);
             this.button6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Button_Clicked);
             // 
             // button7
@@ -185,6 +220,7 @@
             this.button7.Tag = "field";
             this.button7.Text = "3";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.TextChanged += new System.EventHandler(this.button9_TextChanged);
             this.button7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Button_Clicked);
             // 
             // button8
@@ -197,6 +233,7 @@
             this.button8.Tag = "field";
             this.button8.Text = "4";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.TextChanged += new System.EventHandler(this.button9_TextChanged);
             this.button8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Button_Clicked);
             // 
             // button9
@@ -209,6 +246,7 @@
             this.button9.Tag = "field";
             this.button9.Text = "5";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.TextChanged += new System.EventHandler(this.button9_TextChanged);
             this.button9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Button_Clicked);
             // 
             // lblSteps
@@ -239,28 +277,44 @@
             this.listBox1.TabIndex = 12;
             this.listBox1.Visible = false;
             // 
-            // historyToolStripMenuItem
+            // buttonStyleToolStripMenuItem
             // 
-            this.historyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showhideHistoryToolStripMenuItem,
-            this.clearHistoryToolStripMenuItem});
-            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.historyToolStripMenuItem.Text = "History";
+            this.buttonStyleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.flatToolStripMenuItem,
+            this.popupToolStripMenuItem,
+            this.standartToolStripMenuItem,
+            this.systemToolStripMenuItem});
+            this.buttonStyleToolStripMenuItem.Name = "buttonStyleToolStripMenuItem";
+            this.buttonStyleToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.buttonStyleToolStripMenuItem.Text = "Button style";
             // 
-            // showhideHistoryToolStripMenuItem
+            // standartToolStripMenuItem
             // 
-            this.showhideHistoryToolStripMenuItem.Name = "showhideHistoryToolStripMenuItem";
-            this.showhideHistoryToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.showhideHistoryToolStripMenuItem.Text = "Show/hide history";
-            this.showhideHistoryToolStripMenuItem.Click += new System.EventHandler(this.showhideHistoryToolStripMenuItem_Click);
+            this.standartToolStripMenuItem.Name = "standartToolStripMenuItem";
+            this.standartToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.standartToolStripMenuItem.Text = "Standart";
+            this.standartToolStripMenuItem.Click += new System.EventHandler(this.standartToolStripMenuItem_Click);
             // 
-            // clearHistoryToolStripMenuItem
+            // flatToolStripMenuItem
             // 
-            this.clearHistoryToolStripMenuItem.Name = "clearHistoryToolStripMenuItem";
-            this.clearHistoryToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.clearHistoryToolStripMenuItem.Text = "Clear history";
-            this.clearHistoryToolStripMenuItem.Click += new System.EventHandler(this.clearHistoryToolStripMenuItem_Click);
+            this.flatToolStripMenuItem.Name = "flatToolStripMenuItem";
+            this.flatToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.flatToolStripMenuItem.Text = "Flat";
+            this.flatToolStripMenuItem.Click += new System.EventHandler(this.flatToolStripMenuItem_Click);
+            // 
+            // popupToolStripMenuItem
+            // 
+            this.popupToolStripMenuItem.Name = "popupToolStripMenuItem";
+            this.popupToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.popupToolStripMenuItem.Text = "Popup";
+            this.popupToolStripMenuItem.Click += new System.EventHandler(this.popupToolStripMenuItem_Click);
+            // 
+            // systemToolStripMenuItem
+            // 
+            this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
+            this.systemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.systemToolStripMenuItem.Text = "System";
+            this.systemToolStripMenuItem.Click += new System.EventHandler(this.systemToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -313,6 +367,11 @@
         private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showhideHistoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearHistoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buttonStyleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem flatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem popupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem standartToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem systemToolStripMenuItem;
     }
 }
 
