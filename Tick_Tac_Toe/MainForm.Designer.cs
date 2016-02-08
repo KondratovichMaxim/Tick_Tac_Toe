@@ -49,6 +49,11 @@
             this.lblSteps = new System.Windows.Forms.Label();
             this.bttnOpenHistory = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.buttonStyleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.standartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.flatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.popupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +61,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gameToolStripMenuItem,
-            this.historyToolStripMenuItem});
+            this.historyToolStripMenuItem,
+            this.buttonStyleToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(277, 24);
@@ -75,7 +81,7 @@
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newGameToolStripMenuItem.Text = "New game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
             // 
@@ -85,21 +91,21 @@
             this.singlevsBotToolStripMenuItem,
             this.multiplayerToolStripMenuItem});
             this.gameModeToolStripMenuItem.Name = "gameModeToolStripMenuItem";
-            this.gameModeToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.gameModeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.gameModeToolStripMenuItem.Text = "Game mode";
             // 
             // singlevsBotToolStripMenuItem
             // 
-            this.singlevsBotToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.singlevsBotToolStripMenuItem.BackColor = System.Drawing.Color.Silver;
             this.singlevsBotToolStripMenuItem.Name = "singlevsBotToolStripMenuItem";
-            this.singlevsBotToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.singlevsBotToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.singlevsBotToolStripMenuItem.Text = "Single(vs bot)";
             this.singlevsBotToolStripMenuItem.Click += new System.EventHandler(this.Mode_Changed);
             // 
             // multiplayerToolStripMenuItem
             // 
             this.multiplayerToolStripMenuItem.Name = "multiplayerToolStripMenuItem";
-            this.multiplayerToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.multiplayerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.multiplayerToolStripMenuItem.Text = "Multiplayer";
             this.multiplayerToolStripMenuItem.Click += new System.EventHandler(this.Mode_Changed);
             // 
@@ -271,6 +277,45 @@
             this.listBox1.TabIndex = 12;
             this.listBox1.Visible = false;
             // 
+            // buttonStyleToolStripMenuItem
+            // 
+            this.buttonStyleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.flatToolStripMenuItem,
+            this.popupToolStripMenuItem,
+            this.standartToolStripMenuItem,
+            this.systemToolStripMenuItem});
+            this.buttonStyleToolStripMenuItem.Name = "buttonStyleToolStripMenuItem";
+            this.buttonStyleToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.buttonStyleToolStripMenuItem.Text = "Button style";
+            // 
+            // standartToolStripMenuItem
+            // 
+            this.standartToolStripMenuItem.Name = "standartToolStripMenuItem";
+            this.standartToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.standartToolStripMenuItem.Text = "Standart";
+            this.standartToolStripMenuItem.Click += new System.EventHandler(this.standartToolStripMenuItem_Click);
+            // 
+            // flatToolStripMenuItem
+            // 
+            this.flatToolStripMenuItem.Name = "flatToolStripMenuItem";
+            this.flatToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.flatToolStripMenuItem.Text = "Flat";
+            this.flatToolStripMenuItem.Click += new System.EventHandler(this.flatToolStripMenuItem_Click);
+            // 
+            // popupToolStripMenuItem
+            // 
+            this.popupToolStripMenuItem.Name = "popupToolStripMenuItem";
+            this.popupToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.popupToolStripMenuItem.Text = "Popup";
+            this.popupToolStripMenuItem.Click += new System.EventHandler(this.popupToolStripMenuItem_Click);
+            // 
+            // systemToolStripMenuItem
+            // 
+            this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
+            this.systemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.systemToolStripMenuItem.Text = "System";
+            this.systemToolStripMenuItem.Click += new System.EventHandler(this.systemToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,6 +367,11 @@
         private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showhideHistoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearHistoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buttonStyleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem flatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem popupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem standartToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem systemToolStripMenuItem;
     }
 }
 

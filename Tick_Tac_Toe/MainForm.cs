@@ -24,8 +24,7 @@ namespace Tick_Tac_Toe
 
             mode = "single";
 
-            List<Button> list = new List<Button>();
-            list.AddRange(this.Controls.OfType<Button>().ToList<Button>());
+            List<Button> list = GetButtons();
             list.RemoveAt(0);
             list.Reverse();
 
@@ -67,6 +66,13 @@ namespace Tick_Tac_Toe
             listBox1.Items.AddRange(File.ReadAllLines("History.txt"));
         }
 
+        List<Button> GetButtons()
+        {
+            List<Button> list = new List<Button>();
+            list.AddRange(this.Controls.OfType<Button>().ToList<Button>());
+            return list;
+        }
+
         private void Button_Clicked(object sender, MouseEventArgs e)
         {
             Button b = (Button)sender;
@@ -79,7 +85,7 @@ namespace Tick_Tac_Toe
             {
                 return;
             }
-            else
+            else  
                 if (steps == 9)
                 {
                     MessageBox.Show("Drow");
@@ -355,16 +361,18 @@ namespace Tick_Tac_Toe
         {
             if ((ToolStripMenuItem)sender == singlevsBotToolStripMenuItem)
             {
-                singlevsBotToolStripMenuItem.BackColor = SystemColors.ControlDark;
+                singlevsBotToolStripMenuItem.BackColor = Color.Silver;
                 multiplayerToolStripMenuItem.BackColor = SystemColors.Control;
                 mode = "single";
             }
             else
             {
-                multiplayerToolStripMenuItem.BackColor = SystemColors.ControlDark;
+                multiplayerToolStripMenuItem.BackColor = Color.Silver;
                 singlevsBotToolStripMenuItem.BackColor = SystemColors.Control;
                 mode = "multi";
-            } 
+            }
+
+            Restart();
         }
 
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
@@ -407,6 +415,41 @@ namespace Tick_Tac_Toe
         {
             File.Create("History.txt").Close();
             ReloadListBox();
+        }
+
+        private void flatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<Button> list = GetButtons();
+            foreach (Button b in list)
+            {
+                b.FlatStyle = FlatStyle.Flat;
+            }
+        }
+        private void popupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<Button> list = GetButtons();
+            foreach (Button b in list)
+            {
+                b.FlatStyle = FlatStyle.Popup;
+            }
+        }
+
+        private void standartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<Button> list = GetButtons();
+            foreach (Button b in list)
+            {
+                b.FlatStyle = FlatStyle.Standard;
+            }
+        }
+
+        private void systemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<Button> list = GetButtons();
+            foreach (Button b in list)
+            {
+                b.FlatStyle = FlatStyle.System;
+            }
         }
 
         private void button9_TextChanged(object sender, EventArgs e)
