@@ -71,7 +71,6 @@ namespace Tick_Tac_Toe
         {
             Button b = (Button)sender;
             b.Text = player;
-            b.Enabled = false;
 
             lblSteps.Text = "Steps: " + ++steps;
 
@@ -298,7 +297,6 @@ namespace Tick_Tac_Toe
             } while (field[x, y].Text != "");
 
             field[x, y].Text = player;
-            field[x, y].Enabled = false;
 
             #endregion Random Attack
 
@@ -409,6 +407,14 @@ namespace Tick_Tac_Toe
         {
             File.Create("History.txt").Close();
             ReloadListBox();
+        }
+
+        private void button9_TextChanged(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+
+            if (b.Text != "")
+                b.Enabled = false;
         }
     }
 }
